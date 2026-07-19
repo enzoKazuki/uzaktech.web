@@ -1,0 +1,84 @@
+"use client";
+
+import styled, { css } from "styled-components";
+import { defaultTheme } from "../theme";
+import { cornerBox } from "./box";
+import { DefaultTheme } from "styled-components/dist/types";
+
+export type TextProps = {
+	$size?: keyof typeof defaultTheme.fontSize, 
+	$color?: string, 
+	$colorHover?: string, 
+	$margin?: string, 
+	$weight?: number, 
+	$width?: string, 
+	$maxWidth?: string, 
+	$opc?: number, 
+	$italic?: boolean,
+	$opcHover?: number,
+	$cursor?: string,
+	$nowrap?: boolean,
+	$wSpace?: string,
+	$oHidden?: boolean,
+	$lineHeight?: number,
+	$lSpacing?: string,
+	$align?: string
+}
+
+export const defaultText = (props: TextProps & {theme: DefaultTheme}) => css`
+	font-size: ${props.theme.fontSize[props.$size ?? "xvii"]};
+	margin: 0;
+	color: ${props.$color ?? `rgba(${props.theme.colorsRgbC.text}, ${props.$opc ?? 1})`};
+	font-weight: ${props.$weight ?? 400};
+	margin: ${props.$margin};
+	font-style: ${props.$italic && "italic"};
+	line-height: ${props.$lineHeight};
+	white-space: ${props.$wSpace ?? (props.$nowrap && "nowrap")};
+	width: fit-content;
+	max-width: ${props.$maxWidth ?? "100%"};
+	height: fit-content;
+	cursor: ${props.$cursor};
+	text-align: ${props.$align};
+
+	${props.$opcHover != null && css`
+		&:hover 
+		{
+			color: ${props.$color ?? `rgba(${props.theme.colorsRgbC.text}, ${props.$opcHover ?? 1})`};
+		}
+	`}
+
+	${props.$oHidden && css`
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-width: 100%;
+	`};
+`;
+
+export const H1 = styled.h1<TextProps>`
+	${({theme}) => cornerBox("2px", undefined, "10px", theme)};
+	
+	position: relative;
+	font-size: ${({theme, $size}) => $size != null ? theme.fontSize[$size] : theme.fontSize.xxiii};
+	width: fit-content;
+	color: ${({theme, $color, $opc}) => $color || `rgba(${theme.colorsRgbC.text}, ${$opc || 1})`};
+	font-weight: ${({$weight}) => $weight || 550};
+	margin: ${({$margin}) => $margin ?? "0"};
+	line-height: ${({$lineHeight}) => $lineHeight};
+	letter-spacing: ${({$lSpacing}) => $lSpacing};
+	padding: 7px 13px;
+`;
+
+export const Span = styled.span<TextProps>`
+	${(p) => defaultText(p)}
+`;
+
+export const P = styled.p<TextProps>`
+	${(p) => defaultText(p)}
+`;
+
+
+export const SmallInfo = styled(Span).attrs({$opc: 0.5, $size: "xv"})`
+	top: calc(100% + 3px);
+	position: absolute;
+	right: 0;
+`;
