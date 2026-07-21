@@ -68,7 +68,7 @@ export default function Page() {
 					<FormProvider onSubmit={submitMessage}>
 						<tx.P $size="xviii" $weight="450">Leave a message</tx.P>
 
-						<wp.Col $pad="9px 9px 12px" $gap="13px">
+						<wp.Col $pad="12px 9px" $gap="13px">
 							<wp.Row $gap="13px" $dSize={["100%"]} $breakAt={4}>
 								<Input label="First Name" name="first_name" regex={nameRegexp} scaleToRoot $width="100%" placeholder="e.g. John" />
 
