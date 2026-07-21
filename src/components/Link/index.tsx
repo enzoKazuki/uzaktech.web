@@ -39,9 +39,9 @@ export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, 
 			{children}
 		</s.Cta>
 	) : (
-		<a onMouseDown={downHandle} onClick={clickHandle} {...props}>
+		<s.Link onMouseDown={downHandle} onClick={clickHandle} $notStyle={notStyle} $poserStyle={poserStyle} {...props}>
 			{children}
-		</a>
+		</s.Link>
 	)
 }
 

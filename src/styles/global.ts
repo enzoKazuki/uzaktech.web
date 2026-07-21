@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 		--height-header: 57px;
 		--height-logo: 35px;
 		--height-btn-cta: 37px;
-		--height-btn-inp: 35px;
+		--height-btn-inp: 33px;
 		--height-btn-small: 30px;
 		--max-width: 1300px;
 	}
@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 		:root
 		{
 			--height-header: 40px;
-			--height-btn-inp: 25px;
+			--height-btn-inp: 27px;
 			--height-btn: 23px;
 		}
 	}

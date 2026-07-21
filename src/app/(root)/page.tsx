@@ -66,7 +66,7 @@ export default function Home() {
 
 				<wp.Row as="ul" $gap="13px" $pad="0" $breakAt={9}>
 					<bx.Box as="li" $padding="13px 17px" $gap="7px" $width="100%" $minWidth="130px">
-						<tx.P $size="xviii" $weight={450}>Build</tx.P>
+						<tx.P $size="xviii" $weight="450">Build</tx.P>
 
 						<tx.P $maxWidth="39rem" $opc={0.7}>
 							From prototype to production — code that ships and stays maintainable. Clean
@@ -75,7 +75,7 @@ export default function Home() {
 					</bx.Box>
 
 					<bx.Box as="li" $padding="13px 17px" $gap="7px" $width="100%" $minWidth="130px">
-						<tx.P $size="xviii" $weight={450}>Design</tx.P>
+						<tx.P $size="xviii" $weight="450">Design</tx.P>
 
 						<tx.P $maxWidth="39rem" $opc={0.7}>
 							Interfaces with a clear point of view — not templates, not noise. Every screen
@@ -84,7 +84,7 @@ export default function Home() {
 					</bx.Box>
 
 					<bx.Box as="li" $padding="13px 17px" $gap="7px" $width="100%" $minWidth="130px">
-						<tx.P $size="xviii" $weight={450}>Ship</tx.P>
+						<tx.P $size="xviii" $weight="450">Ship</tx.P>
 
 						<tx.P $maxWidth="39rem" $opc={0.7}>
 							Release, learn, refine — indie pace with professional follow-through, from first
@@ -105,22 +105,22 @@ export default function Home() {
 
 				<wp.Row $fWrap="wrap" $gap="9px">
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight={500}>SaaS MVPs</tx.Span>
+						<tx.Span $size="xv" $weight="500">SaaS MVPs</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight={500}>Web apps</tx.Span>
+						<tx.Span $size="xv" $weight="500">Web apps</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight={500}>Internal tools</tx.Span>
+						<tx.Span $size="xv" $weight="500">Internal tools</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight={500}>Design systems</tx.Span>
+						<tx.Span $size="xv" $weight="500">Design systems</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight={500}>Infrastructure</tx.Span>
+						<tx.Span $size="xv" $weight="500">Infrastructure</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight={500}>Payment integration</tx.Span>
+						<tx.Span $size="xv" $weight="500">Payment integration</tx.Span>
 					</bx.Box>
 				</wp.Row>
 			</sc.Section>

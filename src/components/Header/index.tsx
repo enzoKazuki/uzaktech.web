@@ -17,17 +17,23 @@ export const Header = () => {
 		const parent: HTMLDivElement | null = headerRef.current?.parentNode as HTMLDivElement;
 
 		if (parent) {
-			let lastScrollY = parent.scrollTop;
+			let lastScrollY: number = parent.scrollTop;
 			let lastScrollTop: number | null = null;
+			let lastScrollBot: number | null = null;
 
 			const handleScroll = () => {
 				const currentScrollY = parent.scrollTop;
+				const goingUp = currentScrollY < lastScrollY;
+				const pad = 33; // this adds a pad working as a margin for the scrolls
 
-				lastScrollTop = currentScrollY < lastScrollY ? (lastScrollTop ?? lastScrollY) : null;
-
-				setScrollingUp((((lastScrollTop ?? lastScrollY) - currentScrollY > 33) && currentScrollY > 0) && currentScrollY > 0);
-
+				lastScrollTop = goingUp ? (lastScrollTop ?? lastScrollY) : null;
+				lastScrollBot = !goingUp ? (lastScrollBot ?? lastScrollY) : null;
 				lastScrollY = currentScrollY;
+
+				setScrollingUp(currentScrollY > pad && 
+					((goingUp && (lastScrollTop ?? lastScrollY) - currentScrollY > pad) || 
+					(!goingUp && ((lastScrollBot ?? lastScrollY) - currentScrollY) * -1 < pad))
+				);
 			};
 
 			parent.addEventListener("scroll", handleScroll, { passive: true });

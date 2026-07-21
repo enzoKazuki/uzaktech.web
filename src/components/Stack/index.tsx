@@ -66,7 +66,7 @@ export const Stack = ({list}: {list: {label: (typeof StackLabels)[number], icon?
 						<s.Icon src={`/stack_icons/${o.label}.svg`} alt={`icon: ${o.label}`} />
 					}
 
-					<t.Span $size="xv" $weight={500}>
+					<t.Span $size="xv" $weight="450">
 						{StackNames[StackLabels.findIndex(l => l == o.label)]}
 					</t.Span>
 				</b.Box>

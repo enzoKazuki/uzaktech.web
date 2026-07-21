@@ -10,6 +10,7 @@ export const colors = {
 	primaryDarkGray: "#aa3434",
 	primaryClear: "#e94d4d",
 	red: "#fa382a",
+	redError: "#df2417",
 	yellow: "#ffd725",
 	blue: "#45c4ff",
 	green: "#47d624"

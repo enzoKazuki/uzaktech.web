@@ -10,7 +10,7 @@ export type TextProps = {
 	$color?: string, 
 	$colorHover?: string, 
 	$margin?: string, 
-	$weight?: number, 
+	$weight?: string, 
 	$width?: string, 
 	$maxWidth?: string, 
 	$opc?: number, 
@@ -22,7 +22,8 @@ export type TextProps = {
 	$oHidden?: boolean,
 	$lineHeight?: number,
 	$lSpacing?: string,
-	$align?: string
+	$align?: string,
+	$tDecoration?: string
 }
 
 export const defaultText = (props: TextProps & {theme: DefaultTheme}) => css`
@@ -39,6 +40,8 @@ export const defaultText = (props: TextProps & {theme: DefaultTheme}) => css`
 	height: fit-content;
 	cursor: ${props.$cursor};
 	text-align: ${props.$align};
+	text-decoration: ${props.$tDecoration};
+	letter-spacing: ${props.$lSpacing};
 
 	${props.$opcHover != null && css`
 		&:hover 
@@ -76,9 +79,17 @@ export const P = styled.p<TextProps>`
 	${(p) => defaultText(p)}
 `;
 
-
 export const SmallInfo = styled(Span).attrs({$opc: 0.5, $size: "xv"})`
 	top: calc(100% + 3px);
 	position: absolute;
 	right: 0;
+`;
+
+export const Label = styled.label<TextProps>`
+	${(p) => defaultText(p)}
+
+	font-size: ${(p) => p.theme.fontSize.xv};
+	cursor: ${(p) => p.$cursor ?? "default"};
+	color: ${(p) => p.$color ?? `rgba(${p.theme.colorsRgbC.text}, 0.9)`};
+	font-weight: ${(p) => p.$weight ?? 500};
 `;

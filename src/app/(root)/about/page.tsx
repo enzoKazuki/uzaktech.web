@@ -50,7 +50,7 @@ export default function Page() {
 				</sc.Copy>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Back-end</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Back-end</tx.Span>
 					
 					<Stack list={[
 						{label: "c_sharp", icon: true},
@@ -61,7 +61,7 @@ export default function Page() {
 				</wp.Col>
 				
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Front-end</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Front-end</tx.Span>
 					
 					<Stack list={[
 						{label: "ts", icon: true},
@@ -74,7 +74,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Database</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Database</tx.Span>
 					
 					<Stack list={[
 						{label: "pgsql", icon: true},
@@ -83,7 +83,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>DevOps</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">DevOps</tx.Span>
 					
 					<Stack list={[
 						{label: "git", icon: true},
@@ -94,7 +94,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Tools</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Tools</tx.Span>
 					
 					<Stack list={[
 						{label: "vs_code", icon: true},
@@ -106,7 +106,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>AI Agents</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">AI Agents</tx.Span>
 					
 					<Stack list={[
 						{label: "cursor", icon: true},
@@ -122,7 +122,7 @@ export default function Page() {
 
 				<wp.Row as="ul" $gap="13px" $pad="0" $breakAt={9}>
 					<bx.Box as="li" $padding="13px 17px" $gap="7px" $width="100%" $minWidth="130px">
-						<tx.P $size="xviii" $weight={450}>Ownership</tx.P>
+						<tx.P $size="xviii" $weight="450">Ownership</tx.P>
 
 						<tx.P $maxWidth="39rem" $opc={0.7}>
 							Every decision, every bug, every deadline — mine to own. Nothing gets passed down the line.
@@ -131,7 +131,7 @@ export default function Page() {
 					</bx.Box>
 
 					<bx.Box as="li" $padding="13px 17px" $gap="7px" $width="100%" $minWidth="130px">
-						<tx.P $size="xviii" $weight={450}>Craft</tx.P>
+						<tx.P $size="xviii" $weight="450">Craft</tx.P>
 
 						<tx.P $maxWidth="39rem" $opc={0.7}>
 							I&apos;d rather ship something later and get it right than rush something that breaks in a
@@ -140,7 +140,7 @@ export default function Page() {
 					</bx.Box>
 
 					<bx.Box as="li" $padding="13px 17px" $gap="7px" $width="100%" $minWidth="130px">
-						<tx.P $size="xviii" $weight={450}>Honesty</tx.P>
+						<tx.P $size="xviii" $weight="450">Honesty</tx.P>
 
 						<tx.P $maxWidth="39rem" $opc={0.7}>
 							Realistic timelines, real answers — if something&apos;s not going to work, you&apos;ll hear

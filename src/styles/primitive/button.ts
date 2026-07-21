@@ -1,9 +1,12 @@
+"use client";
+
 import styled from "styled-components";
 import { cornerBox } from "./box";
 import { css } from "styled-components";
 
 export type ButtonProps = {
-	$style?: "ghost_link" | undefined
+	$style?: "ghost_link" | undefined,
+	$fullMaxWidth?: string
 };
 
 export const buttonStyle = (p: ButtonProps) => css`
@@ -16,6 +19,18 @@ export const buttonStyle = (p: ButtonProps) => css`
 	height: 37px;
 	box-sizing: border-box;
 	user-select: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+
+	${p.$fullMaxWidth && css`
+		width: 100%;
+		max-width: ${p.$fullMaxWidth};
+	`};
 
 	@media (max-width: 450px) 
 	{
@@ -28,10 +43,19 @@ export const buttonStyle = (p: ButtonProps) => css`
 		text-decoration: none;
 		background-color: ${(p) => `rgba(${p.theme.colorsRgbC.boxShadow}, 0.93)`};
 		
-		&:hover 
+		&:focus,
+		&:hover
 		{
 			${(p) => cornerBox("1px", "#fff", undefined, p.theme, 3)};
 		}
+		
+		&:active:hover
+		{
+			box-shadow: 
+				inset 0 0 0 3px ${(p) => p.theme.colors.boxShadow},
+				inset 0 0 0 4px #fff;
+		}
+		
 	` : p.$style == "ghost_link" ? css`
 		color: ${(p) => p.theme.colors.text};
 		font-weight: 530;

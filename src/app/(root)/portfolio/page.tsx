@@ -52,7 +52,7 @@ export default function Page() {
 				</sc.Copy>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Back-end</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Back-end</tx.Span>
 					
 					<Stack list={[
 						{label: "c_sharp", icon: true},
@@ -63,7 +63,7 @@ export default function Page() {
 				</wp.Col>
 				
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Front-end</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Front-end</tx.Span>
 					
 					<Stack list={[
 						{label: "ts", icon: true},
@@ -76,7 +76,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Database</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Database</tx.Span>
 					
 					<Stack list={[
 						{label: "pgsql", icon: true},
@@ -85,7 +85,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>DevOps</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">DevOps</tx.Span>
 					
 					<Stack list={[
 						{label: "git", icon: true},
@@ -96,7 +96,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>Tools</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">Tools</tx.Span>
 					
 					<Stack list={[
 						{label: "vs_code", icon: true},
@@ -108,7 +108,7 @@ export default function Page() {
 				</wp.Col>
 
 				<wp.Col $gap="9px">
-					<tx.Span $opc={0.4} $weight={500}>AI Agents</tx.Span>
+					<tx.Span $opc={0.4} $weight="500">AI Agents</tx.Span>
 					
 					<Stack list={[
 						{label: "cursor", icon: true},
@@ -134,7 +134,7 @@ export default function Page() {
 						I currently have no professional experience in a career path, all my experience of 4 years of coding comes from personal ideas and freelances.
 					</sc.Copy>
 					<sc.Copy>
-						I'm avaialable and open to start my professional career.
+						I'm available and open to start my professional career.
 					</sc.Copy>
 				</wp.Col>
 			</sc.Section>
