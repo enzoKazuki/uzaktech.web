@@ -17,7 +17,7 @@ export default function Home() {
 
 					<wp.Row $fWrap="wrap" $gap="13px">
 						<Cta clientRender href="#work">Selected work</Cta>
-						<Cta clientRender ctaProps={{$style: "ghost_link"}} href="/contact">Get in touch</Cta>
+						<Cta clientRender btnProps={{$style: "ghost_link"}} href="/contact">Get in touch</Cta>
 					</wp.Row>
 				</sc.Content>
 
@@ -137,7 +137,7 @@ export default function Home() {
 
 				<wp.Row $fWrap="wrap" $gap="13px">
 					<Cta clientRender href="/contact">Start a conversation</Cta>
-					<Cta clientRender ctaProps={{$style: "ghost_link"}} href="/about">About the studio</Cta>
+					<Cta clientRender btnProps={{$style: "ghost_link"}} href="/about">About the studio</Cta>
 				</wp.Row>
 			</sc.Section>
 		</sc.Root>

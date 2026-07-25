@@ -162,7 +162,7 @@ export default function Page() {
 
 				<wp.Row $fWrap="wrap" $gap="10px">
 					<Cta clientRender href="/contact">Get in touch</Cta>
-					<Cta clientRender ctaProps={{$style: "ghost_link"}} href="/">Back home</Cta>
+					<Cta clientRender btnProps={{$style: "ghost_link"}} href="/">Back home</Cta>
 				</wp.Row>
 			</sc.Section>
 

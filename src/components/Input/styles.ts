@@ -27,8 +27,8 @@ export const InputBox = styled.div<{$focus?: boolean, $status?: 1 | 2}>`
 	${(p) => p.$focus == true && css`
 		box-shadow: 
 			0 0 0 1px ${p.theme.colors[p.$status == 1 ? "redError" : "boxShadow"]}, 
-			inset 2px 0 0 0 rgba(${p.theme.colorsRgbC[p.$status == 1 ? "redError" : "boxShadow"]}, 1), 
-			0 0 0 3px rgba(${p.theme.colorsRgbC[p.$status == 1 ? "redError" : "boxShadow"]}, 0.09);
+			inset 2px 0 0 0 rgba(${p.theme.colorsRgbC[p.$status == 1 ? "redError" : "boxShadow"]}, 1);
+			//0 0 0 3px rgba(${p.theme.colorsRgbC[p.$status == 1 ? "redError" : "boxShadow"]}, 0.09);
 	`}
 `;
 

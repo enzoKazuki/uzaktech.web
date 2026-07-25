@@ -7,8 +7,8 @@ import { DefaultTheme } from "styled-components/dist/types";
 
 export type TextProps = {
 	$size?: keyof typeof defaultTheme.fontSize, 
+	$colorPreset?: keyof typeof defaultTheme.colorsRgbC, 
 	$color?: string, 
-	$colorHover?: string, 
 	$margin?: string, 
 	$weight?: string, 
 	$width?: string, 
@@ -27,9 +27,13 @@ export type TextProps = {
 }
 
 export const defaultText = (props: TextProps & {theme: DefaultTheme}) => css`
+	--opc: ${props.$opc ?? 1};
+
 	font-size: ${props.theme.fontSize[props.$size ?? "xvii"]};
 	margin: 0;
-	color: ${props.$color ?? `rgba(${props.theme.colorsRgbC.text}, ${props.$opc ?? 1})`};
+	color: ${
+		props.$colorPreset ? `rgba(${props.theme.colorsRgbC[props.$colorPreset]}, var(--opc))`
+		: props.$color ?? `rgba(${props.theme.colorsRgbC.text}, var(--opc))`};
 	font-weight: ${props.$weight ?? 400};
 	margin: ${props.$margin};
 	font-style: ${props.$italic && "italic"};
@@ -46,7 +50,7 @@ export const defaultText = (props: TextProps & {theme: DefaultTheme}) => css`
 	${props.$opcHover != null && css`
 		&:hover 
 		{
-			color: ${props.$color ?? `rgba(${props.theme.colorsRgbC.text}, ${props.$opcHover ?? 1})`};
+			--opc: ${props.$opcHover} !important;
 		}
 	`}
 

@@ -6,6 +6,7 @@ import { css } from "styled-components";
 
 export type ButtonProps = {
 	$style?: "ghost_link" | undefined,
+	$cta?: boolean,
 	$fullMaxWidth?: string
 };
 
@@ -16,7 +17,7 @@ export const buttonStyle = (p: ButtonProps) => css`
 	font-weight: 530;
 	font-size: ${(p) => p.theme.fontSize.xv};
 	position: relative;
-	height: 37px;
+	height: ${p.$cta == true ? "37px" : "33px"};
 	box-sizing: border-box;
 	user-select: none;
 	border: none;
@@ -34,7 +35,7 @@ export const buttonStyle = (p: ButtonProps) => css`
 
 	@media (max-width: 450px) 
 	{
-		height: 33px;
+		height: ${p.$cta == true ? "37px" : "29px"};
 		padding: 7px 13px;
 	}
 
@@ -55,8 +56,15 @@ export const buttonStyle = (p: ButtonProps) => css`
 				inset 0 0 0 3px ${(p) => p.theme.colors.boxShadow},
 				inset 0 0 0 4px #fff;
 		}
+
+		&:disabled 
+		{
+			pointer-events: none;
+			background-color: ${(p) => `rgba(${p.theme.colorsRgbC.boxShadow}, 0.3)`};
+		}
 		
 	` : p.$style == "ghost_link" ? css`
+		background-color: ${(p) => p.theme.colors.boxBackground};
 		color: ${(p) => p.theme.colors.text};
 		font-weight: 530;
 		box-shadow: inset 0 0 0 1px ${(p) => p.theme.colors.boxShadow};

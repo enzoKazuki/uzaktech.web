@@ -13,7 +13,8 @@ export const colors = {
 	redError: "#df2417",
 	yellow: "#ffd725",
 	blue: "#45c4ff",
-	green: "#47d624"
+	green: "#47d624",
+	greenText: "#36b416"
 } as const;
 
 const colorsRgbC = Object.fromEntries(Object.entries(colors).map(([key, value]) => [key, hexToRgb(value).join(", ")]));

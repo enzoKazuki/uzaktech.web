@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { css } from "styled-components";
 
 export const Cta = styled.a<ButtonProps>`
-	${(p) => buttonStyle(p)};
+	${(p) => buttonStyle({...p})};
 `;
 
 export const Link = styled.a<{$notStyle?: boolean, $poserStyle?: boolean}>`

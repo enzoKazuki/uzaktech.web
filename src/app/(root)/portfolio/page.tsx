@@ -19,7 +19,7 @@ export default function Page() {
 
 					<wp.Row $fWrap="wrap" $gap="10px">
 						<Cta href="#projects">See projects</Cta>
-						<Cta href="/contact" ctaProps={{$style: "ghost_link"}}>Get in touch</Cta>
+						<Cta href="/contact" btnProps={{$style: "ghost_link"}}>Get in touch</Cta>
 					</wp.Row>
 				</sc.Content>
 
@@ -151,7 +151,7 @@ export default function Page() {
 				
 				<wp.Row $fWrap="wrap" $gap="10px">
 					<Cta href="/contact">Contact me</Cta>
-					<Cta ctaProps={{$style: "ghost_link"}} href="/about">About the studio</Cta>
+					<Cta btnProps={{$style: "ghost_link"}} href="/about">About the studio</Cta>
 				</wp.Row>
 			</sc.Section>
 		</sc.Root>

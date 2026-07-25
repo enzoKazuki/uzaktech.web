@@ -11,15 +11,15 @@ export type LinkProps = {
 	blockDown?: boolean,
 	poserStyle?: boolean,
 	notStyle?: boolean,
-	cta?: boolean,
-	ctaProps?: ButtonProps
+	cta?: "button" | "raw_cta",
+	btnProps?: ButtonProps
 } & ComponentPropsWithoutRef<"a">;
 
 export type LinkPoserProps = {
 	children?: ReactNode
 } & ComponentPropsWithoutRef<"span">;
 
-export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, cta, ctaProps, ...props }: LinkProps) => { 
+export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, cta, btnProps, ...props }: LinkProps) => { 
 	const navr = useRouter();
 
 	const clickHandle = (e: MouseEvent) => {
@@ -35,7 +35,7 @@ export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, 
 	const downHandle = (e: MouseEvent) => blockDown ? e.preventDefault() : {};
 	
 	return cta ? (
-		<s.Cta onMouseDown={downHandle} onClick={clickHandle} {...ctaProps} {...props}>
+		<s.Cta onMouseDown={downHandle} onClick={clickHandle} $cta={cta == "raw_cta"} {...btnProps} {...props}>
 			{children}
 		</s.Cta>
 	) : (
@@ -46,5 +46,9 @@ export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, 
 }
 
 export const Cta = (props: LinkProps) => {
-	return <Link {...props} cta={true}>{props.children}</Link>
+	return <Link {...props} cta="raw_cta">{props.children}</Link>
+}
+
+export const ButtonLink = (props: LinkProps) => {
+	return <Link {...props} cta="button">{props.children}</Link>
 }
