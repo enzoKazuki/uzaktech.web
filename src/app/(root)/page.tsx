@@ -17,7 +17,7 @@ export default function Home() {
 
 					<wp.Row $fWrap="wrap" $gap="13px">
 						<Cta clientRender href="#work">Selected work</Cta>
-						<Cta clientRender btnProps={{$style: "ghost_link"}} href="/contact">Get in touch</Cta>
+						<Cta clientRender btnProps={{$style: "ghost_link"}} href="/contact">Contact me</Cta>
 					</wp.Row>
 				</sc.Content>
 
@@ -128,9 +128,12 @@ export default function Home() {
 			<wp.Division $orientation={1} />
 
 			<sc.Section>
-				<wp.Row $margin="0 0 -7px"><AvailabilityLable /></wp.Row>
+				<wp.Col $gap="5px">
+					<AvailabilityLable />
 
-				<sc.Title>Have something in mind?</sc.Title>
+					<sc.Title>Have something in mind?</sc.Title>
+				</wp.Col>
+
 				<sc.Copy>
 					Tell me about your product or idea — I&apos;ll help shape it into something real.
 				</sc.Copy>

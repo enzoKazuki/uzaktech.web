@@ -14,7 +14,7 @@ export default function Page() {
 	return (
 		<sc.Root>
 			<sc.Section $hero $fDirection="row" $breakAt={9} $gap="33px 18px" $minSize={[undefined, "fit-content"]} $dSize={[undefined, "calc((100vh / 3) * 2)"]} $ai="center">
-				<sc.Content $maxSize={[undefined, "300px"]} $dSize={[undefined, "100%"]}>
+				<sc.Content $maxSize={[undefined, "300px"]} $minSize={[undefined, "fit-content"]} $dSize={[undefined, "100%"]}>
 					<tx.H1>
 						Enzo Kazuki (aka. Uzak)
 					</tx.H1>
@@ -24,14 +24,14 @@ export default function Page() {
 
 					<wp.Row $fWrap="wrap" $gap="10px">
 						<Cta href="#projects">See projects</Cta>
-						<Cta href="/contact" btnProps={{$style: "ghost_link"}}>Get in touch</Cta>
+						<Cta href="/contact" btnProps={{$style: "ghost_link"}}>Contact me</Cta>
 					</wp.Row>
 				</sc.Content>
 
-				<bx.Box $width="fit-content" $height="fit-content" $maxWidth="min(100%, 300px)" $margin="0 0 0 auto" $aspectRatio="1">
+				<s.HeroImageBox>
 					<s.HeroImage src={"/desktop_setup.jpg"} alt="complementary hero image" />
 					<tx.SmallInfo>my desk setup</tx.SmallInfo>
-				</bx.Box>
+				</s.HeroImageBox>
 			</sc.Section>
 
 			<sc.Section>
@@ -147,9 +147,12 @@ export default function Page() {
 			<wp.Division $orientation={1} />
 
 			<sc.Section>
-				<wp.Row $margin="0 0 -7px"><AvailabilityLable /></wp.Row>
+				<wp.Col $gap="5px">
+					<AvailabilityLable />
 
-				<sc.Title>Interested in working together?</sc.Title>
+					<sc.Title>Interested in working together?</sc.Title>
+				</wp.Col>
+
 				<sc.Copy>
 					I&apos;m open to freelance work, product builds, and long-term collaborations that value quality and clarity.
 				</sc.Copy>

@@ -31,8 +31,8 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 			{list.map((p, i) => (
 				<bx.Box $padding="13px 17px" $gap="13px" key={i}>
 					<wp.Row $fWrap="wrap" $gap="3px 13px" $jc="space-between" $ai="center">
-						<tx.P $size="xviii" $weight={450}>{p.title}</tx.P>
-						<tx.P $size="xv" $opc={0.5} $weight={500}>{p.category}</tx.P>
+						<tx.P $size="xviii" $weight="450">{p.title}</tx.P>
+						<tx.P $size="xv" $opc={0.5} $weight="500">{p.category}</tx.P>
 					</wp.Row>
 					
 					<tx.P $maxWidth="43rem" $opc={0.7}>
@@ -42,8 +42,8 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 					<Stack list={p.stackLabels.map(a => {return {label: a, icon: portfolio == true}})}/>
 				</bx.Box>
 			))}
-			<bx.Box $shadow={false} $border={`dashed 1px rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`} $corner={{borderSize: "1px", color: `rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`}}>
-				<tx.Span $opc={0.5} $weight={450}>new projects are being built</tx.Span>
+			<bx.Box $padding="13px 17px" $shadow={false} $border={`dashed 1px rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`} $corner={{borderSize: "1px", color: `rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`}}>
+				<tx.Span $opc={0.5} $weight="450">new projects are being built</tx.Span>
 			</bx.Box>
 		</wp.Col>
 	)

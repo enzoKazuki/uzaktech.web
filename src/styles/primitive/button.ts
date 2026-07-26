@@ -17,7 +17,7 @@ export const buttonStyle = (p: ButtonProps) => css`
 	font-weight: 530;
 	font-size: ${(p) => p.theme.fontSize.xv};
 	position: relative;
-	height: ${p.$cta == true ? "37px" : "33px"};
+	height: ${p.$cta == true ? "var(--height-btn-cta)" : "var(--height-btn)"};
 	box-sizing: border-box;
 	user-select: none;
 	border: none;
@@ -35,7 +35,6 @@ export const buttonStyle = (p: ButtonProps) => css`
 
 	@media (max-width: 450px) 
 	{
-		height: ${p.$cta == true ? "37px" : "29px"};
 		padding: 7px 13px;
 	}
 

@@ -9,12 +9,12 @@ export const Root = styled.div`
 	align-items: center;
 	perspective: 1000px;
 	min-width: 300px;
-	min-height: 300px;
 	padding: 0 0 30px;
 	margin: 0 0 0 auto;
 	position: relative;
 	box-shadow: inset 0 0 0 1px ${(p) => p.theme.colors.boxShadow};
 	padding: 0 0 30px;
+	aspect-ratio: 1;
 
 	${(p) => cornerBox("1px", undefined, undefined, p.theme)};
 	
@@ -25,9 +25,6 @@ export const Root = styled.div`
 		width: 250px;
 		min-width: auto;
 		max-width: 100%;
-		height: 250px;
-		min-height: auto;
-		max-height: 100%;
 		padding: 0 0 50px;
 	}
 

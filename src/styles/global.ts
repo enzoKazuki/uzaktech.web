@@ -6,35 +6,17 @@ export const GlobalStyle = createGlobalStyle`
 		--height-header: 57px;
 		--height-logo: 35px;
 		--height-btn-cta: 37px;
-		--height-btn-inp: 33px;
 		--height-btn-small: 30px;
+		--height-btn-inp: 33px;
+		--height-btn: 33px;
 		--max-width: 1300px;
-	}
-	
-	@media (max-width: 700px) 
-	{
-		:root 
-		{
-			--height-btn-inp: 27px;
-			--height-btn: 25px;
-		}
-	}
-
-	@media (max-width: 400px) 
-	{
-		:root
-		{
-			--height-header: 40px;
-			--height-btn-inp: 27px;
-			--height-btn: 23px;
-		}
 	}
 
 	@media (max-width: 1370px) 
 	{
 		:root
 		{
-			--height-header: 50px;
+			--height-header: 55px;
 			--height-logo: 33px;
 		}
 	}
@@ -43,18 +25,19 @@ export const GlobalStyle = createGlobalStyle`
 	{
 		:root
 		{
-			--height-header: 46px;
-			--height-logo: 30px;
+			--height-header: 53px;
+			--height-logo: 31px;
 			--fs-root: 15px;
 		}
 	}
-
-	@media (max-width: 600px) 
+	
+	@media (max-width: 700px) 
 	{
-		:root
+		:root 
 		{
-			--height-header: 43px;
-			--height-logo: 27px;
+			--height-btn-inp: 30px;
+			--height-btn-cta: 33px;
+			--height-btn: 30px;
 		}
 	}
 
@@ -62,8 +45,28 @@ export const GlobalStyle = createGlobalStyle`
 	{
 		:root
 		{
-			--height-header: 43px;
-			--height-logo: 25px;
+			//--height-header: 40px;
+			--height-btn-inp: 27px;
+			--height-btn-cta: 30px;
+			--height-btn: 27px;
+		}
+	}
+
+	@media (max-width: 600px) 
+	{
+		:root
+		{
+			//--height-header: 43px;
+			//--height-logo: 27px;
+		}
+	}
+
+	@media (max-width: 400px) 
+	{
+		:root
+		{
+			//--height-header: 43px;
+			//--height-logo: 25px;
 			--fs-root: 14px;
 		}
 	}

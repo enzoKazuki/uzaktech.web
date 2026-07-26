@@ -158,15 +158,18 @@ export default function Page() {
 			<wp.Division $orientation={1} />
 
 			<sc.Section>
-				<wp.Row $margin="0 0 -7px"><AvailabilityLable /></wp.Row>
+				<wp.Col $gap="5px">
+					<AvailabilityLable />
 
-				<sc.Title>Let&apos;s talk about your project!</sc.Title>
+					<sc.Title>Let&apos;s talk about your project!</sc.Title>
+				</wp.Col>
+				
 				<sc.Copy>
 					I&apos;m open to freelance work, product builds, and long-term collaborations that value quality and clarity.
 				</sc.Copy>
 
 				<wp.Row $fWrap="wrap" $gap="10px">
-					<Cta clientRender href="/contact">Get in touch</Cta>
+					<Cta clientRender href="/contact">Contact me</Cta>
 					<Cta clientRender btnProps={{$style: "ghost_link"}} href="/">Back home</Cta>
 				</wp.Row>
 			</sc.Section>
