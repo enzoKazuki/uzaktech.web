@@ -6,3 +6,4 @@ export * from "./Pyramid";
 export * from "./Stack";
 export * from "./AvailabilityLable";
 export * from "./Input";
+export * from "./ContactMessageForm";
