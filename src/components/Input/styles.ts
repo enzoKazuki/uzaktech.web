@@ -40,7 +40,7 @@ const InputStyle = (p: {status?: 1 | 2}) => css`
 	outline: none;
 	border-radius: 0;
 	padding: 0 17px 0 15px;
-	font-size: ${(p) => p.theme.fontSize.xv};
+	font-size: ${(p) => p.theme.fontSize.xvi};
 	background-color: transparent;
 	min-height: var(--height-btn-inp);
 	color: ${(p) => p.theme.colors.text};
@@ -115,6 +115,6 @@ export const PasswordBtn = styled.div<{$focus?: boolean}>`
 
 export const ErrorText = styled(Span)`
 	color: ${(p) => p.theme.colors.redError};
-	font-size: ${(p) => p.theme.fontSize.xiv};
+	font-size: ${(p) => p.theme.fontSize.xv};
 	font-weight: 450;
 `;

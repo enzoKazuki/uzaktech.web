@@ -130,8 +130,8 @@ export const GlobalStyle = createGlobalStyle`
 
 		&::selection 
 		{
-			background-color: ${({theme}) => theme.colors.primary};
-			color: #fff;
+			background-color: ${(p) => `rgba(${p.theme.colorsRgbC.text}, 0.1)`};
+			color: ${(p) => p.theme.colors.text};
 		}
 	}
 `;

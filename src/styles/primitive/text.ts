@@ -92,8 +92,8 @@ export const SmallInfo = styled(Span).attrs({$opc: 0.5, $size: "xv"})`
 export const Label = styled.label<TextProps>`
 	${(p) => defaultText(p)}
 
-	font-size: ${(p) => p.theme.fontSize.xv};
+	font-size: ${(p) => p.theme.fontSize.xvi};
 	cursor: ${(p) => p.$cursor ?? "default"};
 	color: ${(p) => p.$color ?? `rgba(${p.theme.colorsRgbC.text}, 0.9)`};
-	font-weight: ${(p) => p.$weight ?? 500};
+	font-weight: ${(p) => p.$weight ?? 450};
 `;
