@@ -1,22 +1,28 @@
 "use client"
 
-import { ChangeEvent, ComponentPropsWithoutRef, createContext, FC, ReactNode, SubmitEvent, SyntheticEvent, useContext, useRef } from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef, createContext, FC, ReactNode, SubmitEvent, useContext, useEffect, useRef, useState } from 'react';
 
 type Validator = () => boolean;
 
 export type FormContextType = {
-	register(validator: Validator): () => void
+	register(validator: Validator): () => void,
+	saveValue: (fd: FormData | null) => void
 }
 
 export type FormProviderType = {
 	children: ReactNode, 
-	disableOnEmptiness?: boolean
+	disableOnEmptiness?: boolean,
+	checkSavedValue?: (newValue: Object, oldValue: Object | null) => void,
+	toSaveValue?: boolean
 } & ComponentPropsWithoutRef<"form">;
 
 export const FormContext = createContext<FormContextType | null>(null);
 
-export const FormProvider: FC<FormProviderType> = ({ children, onSubmit, disableOnEmptiness, ...props }) => {
+export const FormProvider: FC<FormProviderType> = ({ children, onSubmit, disableOnEmptiness, checkSavedValue, toSaveValue, ...props }) => {
 	const validators = useRef(new Set<Validator>());
+
+	const [savedValues, setSavedValues] = useState<Object | null>(null);
+	const [savedSubmitValues, setSavedSubmitValues] = useState<Object | null>(null);
 
 	const register = (validator: Validator) => {
 		validators.current.add(validator);
@@ -41,8 +47,11 @@ export const FormProvider: FC<FormProviderType> = ({ children, onSubmit, disable
 
 	const handleChange = (e: ChangeEvent<HTMLFormElement>) => {
 		const form = e.currentTarget;
+		const newFormObject = Object.fromEntries(new FormData(form).entries());
 
 		if (disableOnEmptiness) disableButton(form);
+		
+		checkSavedValue?.(newFormObject, savedValues);
 
 		props.onChange?.(e);
 	}
@@ -51,6 +60,8 @@ export const FormProvider: FC<FormProviderType> = ({ children, onSubmit, disable
 		const form = e.currentTarget;
 
 		if (disableOnEmptiness) disableButton(form, true);
+		
+		setSavedValues(null);
 
 		props.onReset?.(e);
 	}
@@ -68,10 +79,18 @@ export const FormProvider: FC<FormProviderType> = ({ children, onSubmit, disable
 		if (!isValid) return;
 
 		onSubmit?.(e);
+
+		setSavedSubmitValues(Object.fromEntries(new FormData(e.currentTarget).entries()));
 	}
 
+	useEffect(() => {
+		if (toSaveValue) {
+			setSavedValues(savedSubmitValues);
+		}
+	}, [toSaveValue, savedSubmitValues])
+
 	return (
-		<FormContext.Provider value={{register}}>
+		<FormContext.Provider value={{register, saveValue: setSavedValues}}>
 			<form onSubmit={handleSubmit} onReset={handleReset} onChange={handleChange} {...props}>
 				{children}
 			</form>

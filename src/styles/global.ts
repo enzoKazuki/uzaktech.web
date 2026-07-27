@@ -48,7 +48,7 @@ export const GlobalStyle = createGlobalStyle`
 			//--height-header: 40px;
 			--height-btn-inp: 27px;
 			--height-btn-cta: 30px;
-			--height-btn: 27px;
+			--height-btn: 30px;
 		}
 	}
 

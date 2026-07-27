@@ -5,8 +5,8 @@ import * as tx from "@/styles/primitive/text";
 import * as wp from "@/styles/primitive/wrapper";
 import { ButtonLink, Input, Textarea } from "@/components";
 import { Button } from "@/styles/primitive/button";
-import { SubmitEvent, useState } from "react";
-import { emailRegexp, emailTestRegexp, nameRegexp } from "@/utils";
+import { MouseEvent, SubmitEvent, useState } from "react";
+import { emailRegexp, emailTestRegexp, nameRegexp, objectsEqual } from "@/utils";
 import { FormProvider } from "@/context";
 import { api, ContactMessageEndpoint } from "@/services";
 
@@ -16,6 +16,8 @@ export const ContactMessageForm = () => {
 
 	const submitMessage = async (e: SubmitEvent) => {
 		e.preventDefault();
+
+		if (messageStatus == "sent") return;
 
 		setSubmitFallback(true);
 
@@ -33,20 +35,29 @@ export const ContactMessageForm = () => {
 
 		setSubmitFallback(null);
 		
-		if (response.status == 201) {
-			setMessageStatus("sent"); 
-		}
-		else {
-			setMessageStatus("error");
-		}
+		if (response.status == 201) setMessageStatus("sent");
+		else return setMessageStatus("error");
+	}
+
+	const clearForm = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+
+		const { form } = e.currentTarget;
+
+		form?.reset();
+		setMessageStatus("to_send");
 	}
 	
 	return (
-		<bx.Box $width="100%" $padding="13px 15px" $gap="9px">
-			<FormProvider onSubmit={submitMessage}>
-				<tx.P $size="xviii" $weight="450">Leave a message</tx.P>
+		<bx.Box $width="100%" $padding="13px 15px" $gap="13px">
+			<tx.P $size="xviii" $weight="450">Leave a message</tx.P>
 
-				<wp.Col $pad="12px 9px" $gap="13px">
+			<wp.Col $pad="3px 9px" $gap="13px">
+				<tx.P $opc={0.79}>Get in contact by sending me a direct message, I'll reply as soon as possible!</tx.P>
+			</wp.Col>
+
+			<FormProvider onSubmit={submitMessage}>
+				<wp.Col $pad="0 9px 12px" $gap="13px">
 					<wp.Row $gap="13px" $dSize={["100%"]} $breakAt={4}>
 						<Input label="First Name" name="first_name" regex={nameRegexp} scaleToRoot $width="100%" placeholder="e.g. John" />
 
@@ -77,10 +88,10 @@ export const ContactMessageForm = () => {
 				{messageStatus != "to_send" && 
 					<>
 						<wp.Division $orientation={1} $margin="13px 0" />
-						<wp.Col $pad="0 9px" $gap="3px">
+						<wp.Col $pad="9px 9px" $gap="3px">
 							{messageStatus == "sent" && 
 								<>
-									<tx.P $weight="600" $colorPreset="text" $size="xv" $opc={0.3}>
+									<tx.P $weight="600" $colorPreset="text" $size="xvi" $opc={0.9}>
 										SENT!
 									</tx.P>
 									<tx.P $weight="400" $opc={0.79}>
@@ -90,9 +101,14 @@ export const ContactMessageForm = () => {
 								</>
 							}
 							{messageStatus == "error" && 
-								<tx.P $colorPreset="redError">
-									:( sorry look like we have a problem here, please try again later.
-								</tx.P>
+								<>
+									<tx.P $weight="600" $colorPreset="text" $size="xvi" $opc={0.9}>
+										ERROR :(
+									</tx.P>
+									<tx.P $colorPreset="redError" $weight="500">
+										Sorry look like we have a problem here, please try again later.
+									</tx.P>
+								</>
 							}
 						</wp.Col>
 						<wp.Division $orientation={1} $margin="13px 0" />
@@ -106,9 +122,15 @@ export const ContactMessageForm = () => {
 						</ButtonLink>
 					}
 
-					<Button $fullMaxWidth="79px" type="submit" {...(submitFallback != null ? {disabled: submitFallback} : {})}>
-						Send
-					</Button>
+					{messageStatus != "to_send" ?
+						<Button type="button" onClick={clearForm}>
+							{messageStatus == "sent" ? "Send another message" : "Try again"}
+						</Button>
+					:
+						<Button $fullMaxWidth="79px" type="submit" {...(submitFallback != null ? {disabled: submitFallback} : {})}>
+							{submitFallback ? "sending..." : "Send"}
+						</Button>
+					}
 				</wp.Row>
 			</FormProvider>
 		</bx.Box>
