@@ -2,11 +2,19 @@
 
 # <img src="public/logo.png" alt="Project logo" width="273">
 
-UZAK is a one-person studio that turns ideas into digital experiences with creativity and passion.
+UZAK is a one-person studio that turns ideas into digital experiences with creativity and care.
 
 ## Overview
 
-This repository contains the frontend for a personal studio website built with Next.js and TypeScript. It includes the app pages, reusable UI components, and the contact message experience.
+This repository contains the frontend for UZAK's studio website—a polished, modern digital presence built with Next.js and TypeScript. It brings together the studio's story, portfolio, and contact experience into a single, thoughtfully crafted experience that reflects the brand's creative direction.
+
+## Highlights
+
+- Modern front-end architecture built with Next.js and TypeScript
+- Responsive, polished UI designed to feel simple, expressive, and brand-led
+- Reusable component structure for a scalable and maintainable experience
+- Built-in contact flow that supports direct communication with the studio
+- Clean visual language with thoughtful motion, typography, and layout
 
 ## Stack
 
