@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 		"uzaktech",
 		"developer studio",
 		"indie developer",
-		"protfolio"
+		"freelance",
+		"freelance studio",
+		"portfolio"
 	],
 	metadataBase: new URL("https://uzak.com.br"),
 	alternates: {

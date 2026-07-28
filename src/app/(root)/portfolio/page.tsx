@@ -1,5 +1,4 @@
 import * as s from "./styles";
-import * as bx from "@/styles/primitive/box";
 import * as tx from "@/styles/primitive/text";
 import * as sc from "@/styles/primitive/section";
 import * as wp from "@/styles/primitive/wrapper";
@@ -7,7 +6,8 @@ import { AvailabilityLable, Cta, ProjectView, Stack } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Portfolio"
+	title: "Portfolio",
+	keywords: ["enzo kazuki", "kazuki", "uzak"]
 };
 
 export default function Page() {
@@ -19,12 +19,13 @@ export default function Page() {
 						Enzo Kazuki (aka. Uzak)
 					</tx.H1>
 					<sc.Copy $maxWidth="49rem">
-						Hello! I'm Enzo Kazuki (17-years-old) a self-taught full-stack developer based in Paraíba - Brazil, working towards learning and making ideas turn into something real throught my passion and creativity.
+						Hello! I'm Enzo Kazuki (17-years-old) a self-taught junior full-stack developer based in Paraíba - Brazil, working towards learning and making ideas turn into something real through my passion and creativity.
 					</sc.Copy>
 
 					<wp.Row $fWrap="wrap" $gap="10px">
 						<Cta href="#projects">See projects</Cta>
 						<Cta href="/contact" btnProps={{$style: "ghost_link"}}>Contact me</Cta>
+						<Cta href="#experience" btnProps={{$style: "ghost_link"}}>See experience</Cta>
 					</wp.Row>
 				</sc.Content>
 
@@ -130,7 +131,7 @@ export default function Page() {
 				<ProjectView portfolio />
 			</sc.Section>
 
-			<sc.Section id="career">
+			<sc.Section id="experience">
 				<sc.Label>Career</sc.Label>
 				<sc.Title>My professional experience</sc.Title>
 				
