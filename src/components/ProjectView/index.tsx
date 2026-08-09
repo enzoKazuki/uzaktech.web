@@ -20,13 +20,13 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 				? "Full-stack SaaS built for dental clinics, featuring patient and workflow management, PostgreSQL backend, and a production-ready architecture focused on maintainability and reliability."
 				: "End-to-end SaaS for dental clinics, combining a modern Next.js frontend with a complex .NET solution with 30+ controllers with 3+ endpoints each, a PostgreSQL database, and Nginx working together with Docker to deliver a scalable, production-focused application.",
 			imagesUrl: [
-				"/dentalv_captures/1.png", 
-				"/dentalv_captures/2.png", 
-				"/dentalv_captures/3.png", 
-				"/dentalv_captures/4.png", 
-				"/dentalv_captures/5.png", 
-				"/dentalv_captures/6.png", 
-				"/dentalv_captures/7.png"
+				"/project_captures/dentalv/1.png", 
+				"/project_captures/dentalv/2.png", 
+				"/project_captures/dentalv/3.png", 
+				"/project_captures/dentalv/4.png", 
+				"/project_captures/dentalv/5.png", 
+				"/project_captures/dentalv/6.png", 
+				"/project_captures/dentalv/7.png"
 			],
 			stackLabels: !portfolio
 				? ["c_sharp", "pgsql", "next_js", "ts", "docker"]

@@ -105,22 +105,22 @@ export default function Home() {
 
 				<wp.Row $fWrap="wrap" $gap="9px">
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight="500">SaaS MVPs</tx.Span>
+						<tx.Span $size="xv" $weight="450">SaaS MVPs</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight="500">Web apps</tx.Span>
+						<tx.Span $size="xv" $weight="450">Web apps</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight="500">Internal tools</tx.Span>
+						<tx.Span $size="xv" $weight="450">Internal tools</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight="500">Design systems</tx.Span>
+						<tx.Span $size="xv" $weight="450">Design systems</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight="500">Infrastructure</tx.Span>
+						<tx.Span $size="xv" $weight="450">Infrastructure</tx.Span>
 					</bx.Box>
 					<bx.Box $cornerP="none" $padding="8px 9px" $fDirection="row" $ai="center" $gap="9px">
-						<tx.Span $size="xv" $weight="500">Payment integration</tx.Span>
+						<tx.Span $size="xv" $weight="450">Payment integration</tx.Span>
 					</bx.Box>
 				</wp.Row>
 			</sc.Section>
