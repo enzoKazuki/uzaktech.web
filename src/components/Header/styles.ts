@@ -30,7 +30,7 @@ export const Root = styled.header<{$up?: boolean}>`
 	`}
 `;
 
-export const Frame = styled(Box).attrs({$width: "calc(100% - 2px)", $height: "calc(100% - 2px)", $corner: {borderSize: "1px", pad: 0}})`
+export const Frame = styled(Box).attrs({$width: "calc(100% - 2px)", $height: "calc(100% - 2px)", $corner: {borderSize: "1px"}})`
 	left: 1px;
 	top: 1px;
 	position: absolute;

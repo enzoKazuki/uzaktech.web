@@ -38,9 +38,11 @@ export const cornerBox = (borderSize: string, color: string | undefined, size: s
 		left: calc(${borderSize} + ${pad ?? 0}px);
 		height: ${size ?? "15px"};
 		aspect-ratio: 1;
-		box-shadow: calc(${borderSize} * -1) calc(${borderSize} * -1) 0 0 ${color ?? theme.colors.boxShadow};
+		//box-shadow: calc(${borderSize} * -1) calc(${borderSize} * -1) 0 0 ${color ?? theme.colors.boxShadow};
+		border-left: solid ${borderSize} ${color ?? theme.colors.boxShadow};
+		border-top: solid ${borderSize} ${color ?? theme.colors.boxShadow};
 	}
-
+	
 	&::before
 	{
 		content: "";
@@ -49,7 +51,9 @@ export const cornerBox = (borderSize: string, color: string | undefined, size: s
 		right: calc(${borderSize} + ${pad ?? 0}px);
 		height: ${size ?? "15px"};
 		aspect-ratio: 1;
-		box-shadow: ${borderSize} ${borderSize} 0 0 ${color ?? theme.colors.boxShadow};
+		//box-shadow: ${borderSize} ${borderSize} 0 0 ${color ?? theme.colors.boxShadow};
+		border-right: solid ${borderSize} ${color ?? theme.colors.boxShadow};
+		border-bottom: solid ${borderSize} ${color ?? theme.colors.boxShadow};
 	}
 `;
 
@@ -73,5 +77,5 @@ export const Box = styled.div<BoxProps>`
 	align-items: ${(p) => p.$ai};
 	justify-content: ${(p) => p.$jc};
 
-	${(p) => p.$cornerP != "none" && (cornerBox((p.$corner?.borderSize ?? "1px"), (p.$corner?.color ?? p.theme.colors.boxShadow), (p.$corner?.size ?? "15px"), p.theme, ((p.$corner?.pad) ?? 0)))}
+	${(p) => p.$cornerP != "none" && (cornerBox((p.$corner?.borderSize ?? "1px"), (p.$corner?.color ?? p.theme.colors.boxShadow), (p.$corner?.size ?? "15px"), p.theme, ((p.$corner?.pad) ?? -1)))}
 `;

@@ -46,7 +46,7 @@ export const buttonStyle = (p: ButtonProps) => css`
 		&:focus,
 		&:hover
 		{
-			${(p) => cornerBox("1px", "#fff", undefined, p.theme, 3)};
+			${(p) => cornerBox("1px", "#fff", undefined, p.theme, 2)};
 		}
 		
 		&:active:hover

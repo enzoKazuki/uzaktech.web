@@ -1,9 +1,9 @@
 "use client";
 
-import { cornerBox } from "@/styles/primitive";
+import { Box, cornerBox } from "@/styles/primitive";
 import styled from "styled-components";
 
-export const Root = styled.div`
+export const Root = styled(Box)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -13,10 +13,7 @@ export const Root = styled.div`
 	margin: 0 0 0 auto;
 	position: relative;
 	padding: 0 0 30px;
-	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 	aspect-ratio: 1;
-
-	${(p) => cornerBox("1px", undefined, undefined, p.theme)};
 	
 	--stroke: #fff;
 	--stop: #000;
