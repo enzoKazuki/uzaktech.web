@@ -12,7 +12,7 @@ export const Background = styled.div`
 	z-index: 130;
 	top: 0;
 	left: 0;
-	backdrop-filter: blur(3px);
+	//backdrop-filter: blur(3px);
 `;
 
 export const ImageFrame = styled.div`
