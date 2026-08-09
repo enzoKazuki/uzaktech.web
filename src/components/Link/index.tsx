@@ -9,6 +9,7 @@ export type LinkProps = {
 	clientRender?: boolean,
 	children?: ReactNode,
 	blockDown?: boolean,
+	opc?: string,
 	poserStyle?: boolean,
 	notStyle?: boolean,
 	cta?: "button" | "raw_cta",
@@ -19,7 +20,7 @@ export type LinkPoserProps = {
 	children?: ReactNode
 } & ComponentPropsWithoutRef<"span">;
 
-export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, cta, btnProps, ...props }: LinkProps) => { 
+export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, cta, btnProps, opc, ...props }: LinkProps) => { 
 	const navr = useRouter();
 
 	const clickHandle = (e: MouseEvent) => {
@@ -39,7 +40,7 @@ export const Link = ({ clientRender, children, blockDown, poserStyle, notStyle, 
 			{children}
 		</s.Cta>
 	) : (
-		<s.Link onMouseDown={downHandle} onClick={clickHandle} $notStyle={notStyle} $poserStyle={poserStyle} {...props}>
+		<s.Link onMouseDown={downHandle} onClick={clickHandle} $notStyle={notStyle} $poserStyle={poserStyle} $opc={opc} {...props}>
 			{children}
 		</s.Link>
 	)

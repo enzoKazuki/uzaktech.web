@@ -1,17 +1,33 @@
+"use client";
+
+import * as s from "./styles";
 import * as bx from "@/styles/primitive/box";
 import * as tx from "@/styles/primitive/text";
 import * as wp from "@/styles/primitive/wrapper";
-import { Stack, StackLabels } from "../Stack";
+import { ExpandedImageView, ExpandedImageViewObject, Link, Stack, StackLabels } from "../";
 import { defaultTheme } from "@/styles";
+import { useState } from "react";
 
 export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
-	const list: {title: string, category: string, description: string, stackLabels: (typeof StackLabels)[number][]}[] = [
+	const [imagesExpand, setImageExpand] = useState<ExpandedImageViewObject[]>([]);
+	const [showImageView, setShowImageView] = useState<boolean>(false);
+
+	const list: {title: string, category: string, description: string, imagesUrl: string[], frontendSource?: string, backendSource?: string, stackLabels: (typeof StackLabels)[number][]}[] = [
 		{
 			title: "Dental SaaS",
 			category: "Web · Product",
 			description: !portfolio 
 				? "Full-stack SaaS built for dental clinics, featuring patient and workflow management, PostgreSQL backend, and a production-ready architecture focused on maintainability and reliability."
 				: "End-to-end SaaS for dental clinics, combining a modern Next.js frontend with a complex .NET solution with 30+ controllers with 3+ endpoints each, a PostgreSQL database, and Nginx working together with Docker to deliver a scalable, production-focused application.",
+			imagesUrl: [
+				"/dentalv_captures/1.png", 
+				"/dentalv_captures/2.png", 
+				"/dentalv_captures/3.png", 
+				"/dentalv_captures/4.png", 
+				"/dentalv_captures/5.png", 
+				"/dentalv_captures/6.png", 
+				"/dentalv_captures/7.png"
+			],
 			stackLabels: !portfolio
 				? ["c_sharp", "pgsql", "next_js", "ts", "docker"]
 				: ["c_sharp", "pgsql", "next_js", "ts", "docker", "nginx"]
@@ -22,9 +38,25 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 			description: !portfolio 
 				? "Independent full-stack fundraising platform with campaign management, secure Stripe payments, authentication, and a scalable architecture designed from product concept to deployment."
 				: "Solo-built fundraising platform integrating Stripe Connect, secure payment workflows, campaign management, and a complete full-stack architecture from design to deployment.",
-			stackLabels: ["c_sharp", "pgsql", "next_js", "ts", "stripe"]
+			imagesUrl: [],
+			stackLabels: ["c_sharp", "pgsql", "next_js", "ts", "stripe"],
+			frontendSource: "https://github.com/enzoKazuki/greendollar.web",
+			backendSource: "https://github.com/enzoKazuki/greendollar.api"
 		}
 	]
+
+	const clickImage = (srcList: string[], srcSelected: string) => {
+		const list: ExpandedImageViewObject[] = srcList.map((a, i) => {
+			return {
+				label: `Project Caputes ${i + 1}/${srcList.length}`,
+				src: a,
+				selected: srcSelected == a
+			} as ExpandedImageViewObject
+		});
+
+		setImageExpand(list);
+		setShowImageView(true);
+	}
 
 	return (
 		<wp.Col $gap="13px">
@@ -40,11 +72,36 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 					</tx.P>
 
 					<Stack list={p.stackLabels.map(a => {return {label: a, icon: portfolio == true}})}/>
+
+					{p.imagesUrl.length > 0 && 
+						<s.ImageShowCaseRoot>
+							{p.imagesUrl.map((ig, iig) => (
+								<s.ImageShowCase src={ig} key={iig} onClick={() => clickImage(p.imagesUrl, ig)} />
+							))}
+						</s.ImageShowCaseRoot>
+					}
+
+					{(p.frontendSource || p.backendSource) && 
+						<wp.Row $gap="3px 19px" $jc="space-between" $fWrap="wrap">
+							{p.frontendSource && 
+								<Link href={p.frontendSource} target="_blank" opc="0.3" poserStyle>
+									{p.backendSource != null ? "Front-end source" : "Source"}
+								</Link>
+							}
+							{p.backendSource && 
+								<Link href={p.backendSource} target="_blank" opc="0.3" poserStyle>
+									{p.frontendSource != null ? "Back-end source" : "Source"}
+								</Link>
+							}
+						</wp.Row>
+					}
 				</bx.Box>
 			))}
 			<bx.Box $padding="13px 17px" $shadow={false} $border={`dashed 1px rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`} $corner={{borderSize: "1px", color: `rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`}}>
 				<tx.Span $opc={0.5} $weight="450">new projects are being built</tx.Span>
 			</bx.Box>
+
+			<ExpandedImageView images={imagesExpand} show={showImageView} hide={() => setShowImageView(false)} />
 		</wp.Col>
 	)
 }

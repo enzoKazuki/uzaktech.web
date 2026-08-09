@@ -6,8 +6,8 @@ export const Cta = styled.a<ButtonProps>`
 	${(p) => buttonStyle({...p})};
 `;
 
-export const Link = styled.a<{$notStyle?: boolean, $poserStyle?: boolean}>`
-	color: ${(p) => p.theme.colors.text};
+export const Link = styled.a<{$notStyle?: boolean, $poserStyle?: boolean, $opc?: string}>`
+	color: rgba(${(p) => p.theme.colorsRgbC.text}, ${(p) => p.$opc ?? "1"});
 	font-weight: 500;
 
 	${(p) => p.$notStyle && css`
@@ -23,4 +23,9 @@ export const Link = styled.a<{$notStyle?: boolean, $poserStyle?: boolean}>`
 			text-decoration: underline;
 		}
 	`}
+
+	&:hover 
+	{
+		color: rgba(${(p) => p.theme.colorsRgbC.text}, 1);
+	}
 `;
