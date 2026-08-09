@@ -50,7 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			<head>
 				<meta charSet="UTF-8" />
 				<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1.0" />
-				<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+				<link rel="icon" sizes="144x144" href="favicon.png" type="image/png" />
 			</head>
 			<body>
 				<div className="filter" />
