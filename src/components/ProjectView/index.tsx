@@ -48,7 +48,7 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 	const clickImage = (srcList: string[], srcSelected: string) => {
 		const list: ExpandedImageViewObject[] = srcList.map((a, i) => {
 			return {
-				label: `Project Caputes ${i + 1}/${srcList.length}`,
+				label: `Project Captures ${i + 1}/${srcList.length}`,
 				src: a,
 				selected: srcSelected == a
 			} as ExpandedImageViewObject

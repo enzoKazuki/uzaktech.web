@@ -137,7 +137,7 @@ export default function Page() {
 				
 				<wp.Col $gap="9px">
 					<sc.Copy>
-						I currently have no professional experience in a career path, all my experience of 4 years of coding comes from personal ideas and freelances.
+						I currently have no professional experience in a career path, all my experience of 4 years of coding comes from personal ideas and freelance projects.
 					</sc.Copy>
 					<sc.Copy>
 						I'm available and open to start my professional career.

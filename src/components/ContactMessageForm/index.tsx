@@ -95,7 +95,7 @@ export const ContactMessageForm = () => {
 										SENT!
 									</tx.P>
 									<tx.P $weight="400" $opc={0.79}>
-										Your message was sent successfuly, I appreciate your attention on getting in contact. 
+										Your message was sent successfully, I appreciate your attention on getting in contact. 
 										<tx.Span $weight="500"> I'll return to you as soon as possible.</tx.Span>
 									</tx.P>
 								</>
