@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 export const ImageShowCase = styled.img`
-	box-shadow: 0 0 0 1px ${(p) => p.theme.colors.boxShadow};
+	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 	cursor: pointer;
 
 	&:hover 
@@ -16,6 +16,7 @@ export const ImageShowCaseRoot = styled.div`
 	max-height: max(calc(min(100vw, var(--max-width)) / 3 / 1.5), 130px);
 	max-width: 100%;
 	padding: 1px;
+	margin: 13px 0 0;
 	display: flex;
 	flex-direction: row;
 	gap: 13px;

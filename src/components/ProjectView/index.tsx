@@ -97,7 +97,7 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 					}
 				</bx.Box>
 			))}
-			<bx.Box $padding="13px 17px" $shadow={false} $border={`dashed 1px rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`} $corner={{borderSize: "1px", color: `rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`}}>
+			<bx.Box $padding="13px 17px" $shadow={false} $border={`dashed 1px rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`} $corner={{borderSize: "1px", color: `rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`, pad: 1}}>
 				<tx.Span $opc={0.5} $weight="450">new projects are being built</tx.Span>
 			</bx.Box>
 

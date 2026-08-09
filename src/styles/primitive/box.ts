@@ -13,7 +13,8 @@ export type BoxProps = {
 	$corner?: {
 		borderSize: string,
 		color?: string,
-		size?: string
+		size?: string,
+		pad?: number
 	};
 	$cornerP?: "none" | "default",
 	$shadow?: boolean,
@@ -33,8 +34,8 @@ export const cornerBox = (borderSize: string, color: string | undefined, size: s
 	{
 		content: "";
 		position: absolute;
-		top: calc(${borderSize} + ${pad ?? 1}px);
-		left: calc(${borderSize} + ${pad ?? 1}px);
+		top: calc(${borderSize} + ${pad ?? 0}px);
+		left: calc(${borderSize} + ${pad ?? 0}px);
 		height: ${size ?? "15px"};
 		aspect-ratio: 1;
 		box-shadow: calc(${borderSize} * -1) calc(${borderSize} * -1) 0 0 ${color ?? theme.colors.boxShadow};
@@ -44,8 +45,8 @@ export const cornerBox = (borderSize: string, color: string | undefined, size: s
 	{
 		content: "";
 		position: absolute;
-		bottom: calc(${borderSize} + ${pad ?? 1}px);
-		right: calc(${borderSize} + ${pad ?? 1}px);
+		bottom: calc(${borderSize} + ${pad ?? 0}px);
+		right: calc(${borderSize} + ${pad ?? 0}px);
 		height: ${size ?? "15px"};
 		aspect-ratio: 1;
 		box-shadow: ${borderSize} ${borderSize} 0 0 ${color ?? theme.colors.boxShadow};
@@ -62,7 +63,8 @@ export const Box = styled.div<BoxProps>`
 	padding: ${(p) => p.$padding ?? "9px"};
 	aspect-ratio: ${(p) => p.$aspectRatio};
 	overflow: ${(p) => p.$overflow};
-	box-shadow: ${(p) => p.$shadow != false && `inset 0 0 0 1px ${p.theme.colors.boxShadow}`};
+	//box-shadow: ${(p) => p.$shadow != false && `inset 0 0 0 1px ${p.theme.colors.boxShadow}`};
+	outline: ${(p) => p.$shadow != false && `solid 1px ${p.theme.colors.boxShadow}`};
 	border: ${(p) => p.$border};
 	margin: ${(p) => p.$margin};
 	display: ${(p) => p.$display ?? "flex"};
@@ -71,5 +73,5 @@ export const Box = styled.div<BoxProps>`
 	align-items: ${(p) => p.$ai};
 	justify-content: ${(p) => p.$jc};
 
-	${(p) => p.$cornerP != "none" && (cornerBox(p.$corner?.borderSize ?? "1px", p.$corner?.color ?? p.theme.colors.boxShadow, p.$corner?.size ?? "15px", p.theme, 1))}
+	${(p) => p.$cornerP != "none" && (cornerBox((p.$corner?.borderSize ?? "1px"), (p.$corner?.color ?? p.theme.colors.boxShadow), (p.$corner?.size ?? "15px"), p.theme, ((p.$corner?.pad) ?? 0)))}
 `;

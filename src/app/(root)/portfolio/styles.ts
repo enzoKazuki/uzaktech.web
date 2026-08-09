@@ -9,7 +9,7 @@ export const HeroImage = styled.img`
 	object-fit: cover;
 	image-rendering: optimizeQuality;
 	filter: blur(0.33px);
-	box-shadow: 0 0 0 1px ${({theme}) => theme.colors.boxShadow};
+	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 	object-fit: cover;
 	object-position: 0 79%;
 

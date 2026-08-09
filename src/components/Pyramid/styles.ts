@@ -12,8 +12,8 @@ export const Root = styled.div`
 	padding: 0 0 30px;
 	margin: 0 0 0 auto;
 	position: relative;
-	box-shadow: inset 0 0 0 1px ${(p) => p.theme.colors.boxShadow};
 	padding: 0 0 30px;
+	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 	aspect-ratio: 1;
 
 	${(p) => cornerBox("1px", undefined, undefined, p.theme)};
