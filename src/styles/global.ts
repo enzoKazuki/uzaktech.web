@@ -47,10 +47,6 @@ export const GlobalStyle = createGlobalStyle`
 		{
 			--height-header: 51px;
 			--height-logo: 29px;
-			//--height-header: 40px;
-			--height-btn-inp: 27px;
-			--height-btn-cta: 30px;
-			--height-btn: 30px;
 		}
 	}
 
