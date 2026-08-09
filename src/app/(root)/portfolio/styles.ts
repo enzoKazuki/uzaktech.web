@@ -8,7 +8,6 @@ export const HeroImage = styled.img`
 	aspect-ratio: 1;
 	object-fit: cover;
 	image-rendering: optimizeQuality;
-	filter: blur(0.33px);
 	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 	object-fit: cover;
 	object-position: 0 79%;
