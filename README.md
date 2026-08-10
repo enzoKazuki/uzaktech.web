@@ -25,7 +25,7 @@ This repository contains the frontend for UZAK's studio website—a polished, mo
 
 ## Status
 
-This project is currently being deployed and will be live soon.
+This project is deployed and running as the frontend of www.uzak.com.br.
 
 ## Design notes
 
