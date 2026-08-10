@@ -32,9 +32,9 @@ export const metadata: Metadata = {
 		description:
 			"An indie developer studio focused on end-to-end web solutions and platforms.",
 		type: "website",
-		url: "https://greendollar.com",
+		url: "https://uzak.com.br",
 		locale: "en_US",
-		siteName: "GreenDollar"
+		siteName: "Uzak"
 	},
 	twitter: {
 		card: "summary_large_image",
