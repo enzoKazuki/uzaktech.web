@@ -150,7 +150,7 @@ export const Li = styled.li<{$selected?: boolean}>`
 		}
 	}
 
-	@media (max-width: 400px) {
+	@media (max-width: 430px) {
 		&:nth-child(1) {
 			display: none;
 		}

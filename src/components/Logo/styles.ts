@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Root = styled.a`
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 	height: inherit;
 	min-height: inherit;
 	position: relative;
@@ -18,6 +20,7 @@ export const Logo = styled.img`
 	height: 100%;
 	width: auto;
 	height: auto;
+	min-height: 100%;
 	max-height: 100%;
 	max-width: 100%;
 	object-fit: contain; 
