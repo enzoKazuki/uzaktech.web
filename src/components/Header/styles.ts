@@ -18,6 +18,7 @@ export const Root = styled.header<{$up?: boolean}>`
 	max-width: calc(var(--max-width) - 2px);
 	transition: transform 0.3s ease;
 	backdrop-filter: blur(9px);
+	-webkit-backdrop-filter: blur(9px);
 	background-color: #ffffffd3;
 	outline: 1px solid ${(p) => p.theme.colors.boxShadow};
 	z-index: 100;
