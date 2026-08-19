@@ -20,13 +20,13 @@ export const HeroImage = styled.img`
 
 export const HeroImageBox = styled(Box)`
 	--width: 300px;
-	height: fit-content;
+	width: min(100%, var(--width));
+	max-width: min(100%, var(--width));
+	height: auto;
+	max-height: none;
 	margin: 0 0 0 auto;
 	aspect-ratio: 1;
-	min-height: min(100%, var(--width));
-	max-height: min(100%, var(--width));
-	min-width: min(100%, var(--width));
-	max-width: min(100%, var(--width));
+	flex-shrink: 0;
 
 	@media (max-width: 400px) 
 	{

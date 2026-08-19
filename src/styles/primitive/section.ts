@@ -24,6 +24,13 @@ export const Section = styled(Wrapper).attrs<{$breakAt?: number, $hero?: boolean
 			flex-direction: column;
 		}
 	`}
+
+	${({$hero, $breakAt}) => $hero && $breakAt && css`
+		@media (max-width: ${$breakAt * 100}px) {
+			height: auto;
+			min-height: 0;
+		}
+	`}
 `;
 
 export const Content = styled(Wrapper)`

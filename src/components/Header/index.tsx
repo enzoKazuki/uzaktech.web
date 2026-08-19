@@ -14,7 +14,8 @@ export const Header = () => {
 	const headerRef = useRef<HTMLDivElement | null>(null);
 
    useLayoutEffect(() => {
-		const parent: HTMLDivElement | null = headerRef.current?.parentNode as HTMLDivElement;
+		const parent: HTMLDivElement | null = headerRef.current?.closest("[data-scroll-root]") as HTMLDivElement
+			?? headerRef.current?.parentElement?.parentElement as HTMLDivElement;
 
 		if (parent) {
 			let lastScrollY: number = parent.scrollTop;
@@ -42,10 +43,10 @@ export const Header = () => {
    }, [headerRef]);
 
 	return (
-		<>
-			<s.RootFrame $up={scrollingUp} />
+		<s.StickyShell $up={scrollingUp}>
+			<s.Root ref={headerRef}>
+				<s.RootFrame $up={scrollingUp} aria-hidden />
 
-			<s.Root ref={headerRef} $up={scrollingUp}>
 				<s.RootLogo>
 					<Logo />
 				</s.RootLogo>
@@ -67,6 +68,6 @@ export const Header = () => {
 					</s.Ul>
 				</s.Nav>
 			</s.Root>
-		</>
+		</s.StickyShell>
 	)
 }

@@ -25,8 +25,10 @@ export const Root = styled(Box)`
 		min-width: auto;
 		min-height: auto;
 		max-width: 100%;
-		max-height: 100%;
+		max-height: none;
 		padding: 0 0 50px;
+		flex-shrink: 0;
+		overflow: visible;
 	}
 
 	

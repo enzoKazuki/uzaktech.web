@@ -3,7 +3,7 @@ import { Header } from "@/components";
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<s.Root>
+		<s.Root data-scroll-root>
 			<Header /> 
 
 			<s.Main>

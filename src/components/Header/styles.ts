@@ -4,7 +4,18 @@ import { cornerBox } from "@/styles/primitive";
 import styled from "styled-components";
 import { css } from "styled-components";
 
-export const Root = styled.header<{$up?: boolean}>`
+export const StickyShell = styled.div<{$up?: boolean}>`
+	position: ${({$up}) => $up ? "sticky" : "relative"};
+	top: 0;
+	z-index: 100;
+	flex-shrink: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
+
+export const Root = styled.header`
 	position: relative;
 	display: flex;
 	flex-direction: row;
@@ -13,50 +24,29 @@ export const Root = styled.header<{$up?: boolean}>`
 	padding: 9px calc(9px - 1px);
 	height: calc(var(--height-header) - 2px);
 	min-height: calc(var(--height-header) - 2px);
-	overflow: hidden;
+	overflow: visible;
 	width: calc(100% - 2px);
 	max-width: calc(var(--max-width) - 2px);
 	outline: 1px solid ${(p) => p.theme.colors.boxShadow};
-	z-index: 100;
-	top: 1px;
+	z-index: 2;
 
 	${(p) => cornerBox(p.theme)};
-
-	${({$up}) => $up ? css`
-		position: sticky;
-		transform: translate(0);
-	` : css`
-		position: relative;
-	`}
 `;
 
 export const RootFrame = styled.header<{$up?: boolean}>`
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 13px;
-	padding: 9px calc(9px - 1px);
-	height: calc(var(--height-header) - 2px);
-	min-height: calc(var(--height-header) - 2px);
-	overflow: hidden;
-	width: calc(100% - 2px);
-	max-width: calc(var(--max-width) - 2px);
+	position: absolute;
+	inset: 0;
 	backdrop-filter: blur(9px);
 	-webkit-backdrop-filter: blur(9px);
 	background-color: #ffffffd3;
 	outline: 1px solid ${(p) => p.theme.colors.boxShadow};
-	z-index: 100;
-	top: 1px;
-	transform: translate(0, calc(var(--height-header) + 7px));
-	margin: calc(var(--height-header) * -1 + (-7px)) 0 0;
+	z-index: 1;
+	pointer-events: none;
+	transform: ${({$up}) => $up ? "none" : `translateY(calc(var(--height-header) + 7px))`};
+	opacity: ${({$up}) => $up ? 1 : 0};
+	transition: transform 0.2s ease, opacity 0.2s ease;
 
-	${({$up}) => $up ? css`
-		position: sticky;
-		transform: translate(0);
-	` : css`
-		position: relative;
-	`}
+	${(p) => cornerBox(p.theme)};
 `;
 
 export const RootLogo = styled.div`
@@ -64,12 +54,15 @@ export const RootLogo = styled.div`
 	min-height: var(--height-logo);
 	display: flex;
 	flex-direction: row;
+	position: relative;
+	z-index: 2;
 `;
 
 export const Nav = styled.nav`
 	height: 100%;
 	margin: 0 5px 0 auto;
 	position: relative;
+	z-index: 2;
 	padding: 0;
 `;
 
