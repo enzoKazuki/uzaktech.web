@@ -27,7 +27,7 @@ export const Section = styled(Wrapper).attrs<{$breakAt?: number, $hero?: boolean
 `;
 
 export const Content = styled(Wrapper)`
-	height: ${(p) => p.$dSize?.[1] ?? "auto"};
+	height: ${(p) => p.$dSize?.[1] ?? "fit-content"};
 	width: 100%;
 	display: flex;
 	flex-direction: column;
