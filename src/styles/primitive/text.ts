@@ -62,7 +62,7 @@ export const defaultText = (props: TextProps & {theme: DefaultTheme}) => css`
 `;
 
 export const H1 = styled.h1<TextProps>`
-	${({theme}) => cornerBox("2px", undefined, "10px", theme)};
+	${(p) => cornerBox(p.theme, "2px", undefined, "10px")};
 	
 	position: relative;
 	font-size: ${({theme, $size}) => $size != null ? theme.fontSize[$size] : theme.fontSize.xxiii};

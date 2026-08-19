@@ -5,6 +5,10 @@ import styled from "styled-components";
 export const ImageShowCase = styled.img`
 	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 	cursor: pointer;
+	width: auto;
+	height: auto;
+	flex: 0 0 auto;
+	max-height: 100%;
 
 	&:hover 
 	{

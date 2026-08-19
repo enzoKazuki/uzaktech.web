@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, cornerBox } from "@/styles/primitive";
+import { Box } from "@/styles/primitive";
 import styled from "styled-components";
 
 export const Root = styled(Box)`

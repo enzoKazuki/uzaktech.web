@@ -44,8 +44,6 @@ export const Header = () => {
 	return (
 		<>
 			<s.Root ref={headerRef} $up={scrollingUp}>
-				<s.Frame />
-
 				<s.RootLogo>
 					<Logo />
 				</s.RootLogo>
