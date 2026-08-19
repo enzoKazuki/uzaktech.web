@@ -43,31 +43,27 @@ export const Header = () => {
    }, [headerRef]);
 
 	return (
-		<s.StickyShell $up={scrollingUp}>
-			<s.Root ref={headerRef}>
-				<s.RootFrame $up={scrollingUp} aria-hidden />
-
-				<s.RootLogo>
-					<Logo />
-				</s.RootLogo>
-				
-				<s.Nav>
-					<s.Ul>
-						<s.Li $selected={pathname == "/"}>
-							<Link clientRender href="/">Home</Link>
-						</s.Li>
-						<s.Li $selected={pathname == "/about"}>
-							<Link clientRender href="/about">About</Link>
-						</s.Li>
-						<s.Li $selected={pathname == "/portfolio"}>
-							<Link clientRender href="/portfolio">Portfolio</Link>
-						</s.Li>
-						<s.Li $selected={pathname == "/contact"}>
-							<Link clientRender href="/contact">Contact</Link>
-						</s.Li>
-					</s.Ul>
-				</s.Nav>
-			</s.Root>
-		</s.StickyShell>
+		<s.Root ref={headerRef} $up={scrollingUp}>
+			<s.RootLogo>
+				<Logo />
+			</s.RootLogo>
+			
+			<s.Nav>
+				<s.Ul>
+					<s.Li $selected={pathname == "/"}>
+						<Link clientRender href="/">Home</Link>
+					</s.Li>
+					<s.Li $selected={pathname == "/about"}>
+						<Link clientRender href="/about">About</Link>
+					</s.Li>
+					<s.Li $selected={pathname == "/portfolio"}>
+						<Link clientRender href="/portfolio">Portfolio</Link>
+					</s.Li>
+					<s.Li $selected={pathname == "/contact"}>
+						<Link clientRender href="/contact">Contact</Link>
+					</s.Li>
+				</s.Ul>
+			</s.Nav>
+		</s.Root>
 	)
 }
