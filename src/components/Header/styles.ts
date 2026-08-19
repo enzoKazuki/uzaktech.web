@@ -21,12 +21,12 @@ export const Root = styled.header<{$up?: boolean}>`
 	top: 0;
 	
 	${({$up}) => $up ? css`
-	position: sticky;
-	transform: translate(0);
+		position: sticky;
+		transform: translate(0);
 	` : css`
-	position: relative;
+		position: relative;
 	`}
-	`;
+`;
 
 export const Frame = styled(Box).attrs({$width: "calc(100% - 2px)", $height: "calc(100% - 2px)", $corner: {borderSize: "1px"}})`
 	left: 1px;

@@ -23,6 +23,8 @@ export const HeroImageBox = styled(Box)`
 	height: fit-content;
 	margin: 0 0 0 auto;
 	aspect-ratio: 1;
+	min-height: min(100%, var(--width));
+	max-height: min(100%, var(--width));
 	min-width: min(100%, var(--width));
 	max-width: min(100%, var(--width));
 

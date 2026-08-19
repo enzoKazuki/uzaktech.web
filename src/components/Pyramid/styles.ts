@@ -9,6 +9,7 @@ export const Root = styled(Box)`
 	align-items: center;
 	perspective: 1000px;
 	min-width: 300px;
+	min-height: 300px;
 	padding: 0 0 30px;
 	margin: 0 0 0 auto;
 	position: relative;
@@ -20,8 +21,11 @@ export const Root = styled(Box)`
 
 	@media (max-width: 700px) {
 		width: 250px;
+		height: 250px;
 		min-width: auto;
+		min-height: auto;
 		max-width: 100%;
+		max-height: 100%;
 		padding: 0 0 50px;
 	}
 

@@ -14,7 +14,7 @@ export default function Page() {
 	return (
 		<sc.Root>
 			<sc.Section $hero $fDirection="row" $breakAt={9} $gap="33px 18px" $minSize={[undefined, "fit-content"]} $dSize={[undefined, "calc((100vh / 3) * 2)"]} $ai="center">
-				<sc.Content $maxSize={[undefined, "300px"]} $minSize={[undefined, "fit-content"]} $dSize={[undefined, "100%"]}>
+				<sc.Content $maxSize={["fit-content", "300px"]} $minSize={[undefined, "fit-content"]} $dSize={[undefined, "100%"]}>
 					<tx.H1>
 						Enzo Kazuki (aka. Uzak)
 					</tx.H1>

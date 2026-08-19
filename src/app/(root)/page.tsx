@@ -8,7 +8,7 @@ export default function Home() {
   	return (
 		<sc.Root>
 			<sc.Section  $hero $fDirection="row" $breakAt={9} $gap="33px 18px" $minSize={[undefined, "fit-content"]} $dSize={[undefined, "calc((100vh / 3) * 2)"]} $ai="center">
-				<sc.Content $minSize={[undefined, "300px"]}>
+				<sc.Content $minSize={["fit-content", "300px"]}>
 					<tx.H1>Building incomparable dreams with passion and creativity</tx.H1>
 
 					<sc.Copy>
