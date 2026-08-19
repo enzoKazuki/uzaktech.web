@@ -10,12 +10,16 @@ export const Root = styled.a`
 	min-width: fit-content;
 	overflow: hidden;
 	margin: 0 0 0 3px;
+	max-width: 100%;
 	cursor: pointer;
 `;
 
 export const Logo = styled.img`
 	height: 100%;
-	width: fit-content;
+	width: auto;
+	height: auto;
+	max-height: 100%;
+	max-width: 100%;
 	object-fit: contain; 
 	overflow: hidden;
 	pointer-events: none;
