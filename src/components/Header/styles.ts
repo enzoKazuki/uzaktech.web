@@ -1,6 +1,6 @@
 "use client";
 
-import { Box } from "@/styles/primitive";
+import { cornerBox } from "@/styles/primitive";
 import styled from "styled-components";
 import { css } from "styled-components";
 
@@ -10,16 +10,18 @@ export const Root = styled.header<{$up?: boolean}>`
 	flex-direction: row;
 	align-items: center;
 	gap: 13px;
-	padding: 9px;
-	height: var(--height-header);
-	min-height: var(--height-header);
+	padding: 9px calc(9px - 1px);
+	height: calc(var(--height-header) - 2px);
+	min-height: calc(var(--height-header) - 2px);
 	overflow: hidden;
-	width: 100%;
-	max-width: var(--max-width);
-	transition: transform 0.3s ease;
+	width: calc(100% - 2px);
+	max-width: calc(var(--max-width) - 2px);
+	outline: 1px solid ${(p) => p.theme.colors.boxShadow};
 	z-index: 100;
-	top: 0;
-	
+	top: 1px;
+
+	${(p) => cornerBox(p.theme)};
+
 	${({$up}) => $up ? css`
 		position: sticky;
 		transform: translate(0);
@@ -28,13 +30,33 @@ export const Root = styled.header<{$up?: boolean}>`
 	`}
 `;
 
-export const Frame = styled(Box).attrs({$width: "calc(100% - 2px)", $height: "calc(100% - 2px)", $corner: {borderSize: "1px"}})`
-	left: 1px;
-	top: 1px;
-	background-color: #ffffffd3;
+export const RootFrame = styled.header<{$up?: boolean}>`
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 13px;
+	padding: 9px calc(9px - 1px);
+	height: calc(var(--height-header) - 2px);
+	min-height: calc(var(--height-header) - 2px);
+	overflow: hidden;
+	width: calc(100% - 2px);
+	max-width: calc(var(--max-width) - 2px);
 	backdrop-filter: blur(9px);
 	-webkit-backdrop-filter: blur(9px);
-	position: absolute;
+	background-color: #ffffffd3;
+	outline: 1px solid ${(p) => p.theme.colors.boxShadow};
+	z-index: 100;
+	top: 1px;
+	transform: translate(0, calc(var(--height-header) + 7px));
+	margin: calc(var(--height-header) * -1 + (-7px)) 0 0;
+
+	${({$up}) => $up ? css`
+		position: sticky;
+		transform: translate(0);
+	` : css`
+		position: relative;
+	`}
 `;
 
 export const RootLogo = styled.div`
