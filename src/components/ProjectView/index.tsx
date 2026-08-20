@@ -1,17 +1,13 @@
 "use client";
 
-import * as s from "./styles";
 import * as bx from "@/styles/primitive/box";
 import * as tx from "@/styles/primitive/text";
 import * as wp from "@/styles/primitive/wrapper";
-import { ExpandedImageView, ExpandedImageViewObject, Link, Stack, StackLabels } from "../";
+import { Link, Stack, StackLabels } from "../";
 import { defaultTheme } from "@/styles";
-import { useState } from "react";
+import { ImageShowCase } from "./ImageShowCase";
 
 export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
-	const [imagesExpand, setImageExpand] = useState<ExpandedImageViewObject[]>([]);
-	const [showImageView, setShowImageView] = useState<boolean>(false);
-
 	const list: {title: string, category: string, description: string, imagesUrl: string[], frontendSource?: string, backendSource?: string, stackLabels: (typeof StackLabels)[number][]}[] = [
 		{
 			title: "Dental SaaS",
@@ -45,19 +41,6 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 		}
 	]
 
-	const clickImage = (srcList: string[], srcSelected: string) => {
-		const list: ExpandedImageViewObject[] = srcList.map((a, i) => {
-			return {
-				label: `Project Captures ${i + 1}/${srcList.length}`,
-				src: a,
-				selected: srcSelected == a
-			} as ExpandedImageViewObject
-		});
-
-		setImageExpand(list);
-		setShowImageView(true);
-	}
-
 	return (
 		<wp.Col $gap="13px">
 			{list.map((p, i) => (
@@ -73,13 +56,7 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 
 					<Stack list={p.stackLabels.map(a => {return {label: a, icon: portfolio == true}})}/>
 
-					{p.imagesUrl.length > 0 && 
-						<s.ImageShowCaseRoot>
-							{p.imagesUrl.map((ig, iig) => (
-								<s.ImageShowCase src={ig} key={iig} onClick={() => clickImage(p.imagesUrl, ig)} />
-							))}
-						</s.ImageShowCaseRoot>
-					}
+					{p.imagesUrl.length > 0 && <ImageShowCase images={p.imagesUrl} />}
 
 					{(p.frontendSource || p.backendSource) && 
 						<wp.Row $gap="3px 19px" $jc="space-between" $fWrap="wrap">
@@ -100,8 +77,6 @@ export const ProjectView = ({portfolio}: {portfolio?: boolean}) => {
 			<bx.Box $padding="13px 17px" $shadow={false} $border={`dashed 1px rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`} $corner={{borderSize: "1px", color: `rgba(${defaultTheme.colorsRgbC.boxShadow}, 0.5)`, pad: 1}}>
 				<tx.Span $opc={0.5} $weight="450">new projects are being built</tx.Span>
 			</bx.Box>
-
-			<ExpandedImageView images={imagesExpand} show={showImageView} hide={() => setShowImageView(false)} />
 		</wp.Col>
 	)
 }

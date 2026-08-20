@@ -40,6 +40,7 @@ export const cornerBox = (theme: DefaultTheme, borderSize?: string, color?: stri
 		aspect-ratio: 1;
 		border-left: solid ${borderSize ?? "1px"} ${color ?? theme.colors.boxShadow};
 		border-top: solid ${borderSize ?? "1px"} ${color ?? theme.colors.boxShadow};
+		z-index: 1;
 	}
 	
 	&::before
@@ -52,6 +53,7 @@ export const cornerBox = (theme: DefaultTheme, borderSize?: string, color?: stri
 		aspect-ratio: 1;
 		border-right: solid ${borderSize ?? "1px"} ${color ?? theme.colors.boxShadow};
 		border-bottom: solid ${borderSize ?? "1px"} ${color ?? theme.colors.boxShadow};
+		z-index: 1;
 	}
 `;
 
