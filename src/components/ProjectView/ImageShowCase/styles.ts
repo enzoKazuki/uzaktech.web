@@ -7,7 +7,7 @@ export const Img = styled.img`
 	position: relative;
 	cursor: pointer;
 	width: auto;
-	height: auto;
+	height: 100%;
 	max-height: 100%;
 	-webkit-user-drag: none;
 	z-index: 0;
@@ -18,8 +18,8 @@ export const Wrapper = styled.div<{$moving?: boolean}>`
 	max-width: fit-content;
 	flex: 0 0 auto;
 	max-height: 100%;
-	height: auto;
-	width: fit-content;
+	height: 100%;
+	width: auto;
 	pointer-events: ${(p) => p.$moving ? "none" : "auto"};
 	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 
