@@ -20,7 +20,7 @@ export const Wrapper = styled.div<{$moving?: boolean}>`
 	flex: 0 0 auto;
 	max-height: 100%;
 	height: auto;
-	width: auto;
+	width: fit-content;
 	pointer-events: ${(p) => p.$moving ? "none" : "auto"};
 	outline: solid 1px ${(p) => p.theme.colors.boxShadow};
 
