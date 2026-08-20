@@ -8,7 +8,6 @@ export const Img = styled.img`
 	cursor: pointer;
 	width: auto;
 	height: auto;
-	flex: 0 0 auto;
 	max-height: 100%;
 	-webkit-user-drag: none;
 	z-index: 0;
