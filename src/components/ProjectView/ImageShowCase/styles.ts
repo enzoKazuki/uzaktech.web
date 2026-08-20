@@ -16,7 +16,7 @@ export const Img = styled.img`
 
 export const Wrapper = styled.div<{$moving?: boolean}>`
 	position: relative;
-	max-width: 100%;
+	max-width: fit-content;
 	flex: 0 0 auto;
 	max-height: 100%;
 	height: auto;
