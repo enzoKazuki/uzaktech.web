@@ -2,9 +2,11 @@
 
 import { cornerBox, Span } from "@/styles/primitive";
 import styled from "styled-components";
+
 export const Root = styled.div<{$moving?: boolean}>`
 	height: max(calc(min(100dvw, calc(var(--max-width) - 300px)) / 3 / 1.5), 130px);
 	max-width: 100%;
+	position: relative;
 	padding: 1px;
 	margin: 13px 0 0;
 	display: flex;
