@@ -41,7 +41,12 @@ export const metadata: Metadata = {
 		title: "Uzak // Tech Studio",
 		description:
 			"An indie developer studio focused on end-to-end web solutions and platforms."
-	}
+	},
+	icons: {
+		icon: "/favicon.png",
+		shortcut: "/favicon.png",
+		apple: "/favicon.png"
+	},
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
